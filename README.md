@@ -1,6 +1,6 @@
 # Thyroid Disease Classification: ML Assignment 2
 
-**Name:** Dhruv
+**Name:** Dhruv Gupta
 **BITS ID:** 2026CT05090
 **Programme:** M.Tech (AIML), Machine Learning, Assignment 2
 
@@ -72,17 +72,24 @@ https://github.com/2026ct05090/2026ct05090_ML_Assignment-2
 ├── README.md
 ├── requirements.txt
 ├── test_data.csv
-└── model/
-    ├── 2026CT05090_ml_assignment.ipynb
-    ├── logistic_regression.joblib
-    ├── decision_tree.joblib
-    ├── knn.joblib
-    ├── naive_bayes.joblib
-    ├── random_forest.joblib
-    └── (graph images used in this README)
+├── thyroidDF.csv
+├── model/
+│   ├── 2026CT05090_ml_assignment.ipynb
+│   ├── logistic_regression.joblib
+│   ├── decision_tree.joblib
+│   ├── knn.joblib
+│   ├── naive_bayes.joblib
+│   └── random_forest.joblib
+├── result_output/
+│   ├── metrics_comparison.png
+│   ├── metrics_heatmap.png
+│   ├── confusion_matrices.png
+│   └── roc_curves.png
+└── screenshots/
+    └── BITS Virtual Lab execution screenshots
 ```
 
-`test_data.csv` is the 20% test split (1,814 rows, 27 features + `target`) used in the experiments.
+`thyroidDF.csv` is the original Kaggle dataset (kept so the notebook can load it directly from this repo). `test_data.csv` is the 20% test split (1,814 rows, 27 features + `target`) used in the experiments. The graphs shown in this README are in `result_output/`.
 
 ---
 
@@ -114,15 +121,15 @@ These settings were chosen by me as reasonable values and were not tuned. Precis
 
 **Bar chart of all metrics:**
 
-![Metrics comparison](model/metrics_comparison.png)
+![Metrics comparison](result_output/metrics_comparison.png)
 
 **Heatmap of all metrics:**
 
-![Metrics heatmap](model/metrics_heatmap.png)
+![Metrics heatmap](result_output/metrics_heatmap.png)
 
 **Confusion matrices:**
 
-![Confusion matrices](model/confusion_matrices.png)
+![Confusion matrices](result_output/confusion_matrices.png)
 
 | Model | TN | FP | FN | TP |
 | --- | --- | --- | --- | --- |
@@ -134,7 +141,7 @@ These settings were chosen by me as reasonable values and were not tuned. Precis
 
 **ROC curves:**
 
-![ROC curves](model/roc_curves.png)
+![ROC curves](result_output/roc_curves.png)
 
 ---
 
@@ -155,12 +162,24 @@ These settings were chosen by me as reasonable values and were not tuned. Precis
 
 ## 6. How to Run
 
-1. Open `2026CT05090_ml_assignment.ipynb` in Google Colab or Jupyter Notebook.
+1. Open `model/2026CT05090_ml_assignment.ipynb` in Google Colab or Jupyter Notebook.
 2. Install the libraries:
    ```
    pip install -r requirements.txt
    ```
-3. Run all cells from top to bottom. The dataset is downloaded from Kaggle using `kagglehub`, so internet access is needed.
+3. Run all cells from top to bottom. The dataset (`thyroidDF.csv`) is loaded from this GitHub repo. If that fails, it is downloaded from Kaggle using `kagglehub`.
 4. At the end, the notebook prints the results table, creates the graphs, saves `test_data.csv` and saves the trained models in the `model/` folder.
 
 The random seed is fixed (`SEED = 42`), so results are the same on every run in the same environment.
+
+---
+
+## 7. Screenshots of Execution on BITS Virtual Lab
+
+![Screenshot 1](screenshots/screenshot%201.png)
+
+![Screenshot 2](screenshots/screenshot%202.png)
+
+![Screenshot 3](screenshots/screenshot%203.png)
+
+![Screenshot 4](screenshots/screenshot%204.png)
